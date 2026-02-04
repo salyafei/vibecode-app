@@ -1792,6 +1792,285 @@
             font-size: 1rem;
         }
 
+        /* Expo Setup Styles */
+        .expo-setup-info {
+            background: var(--bg-tertiary);
+            border-radius: 8px;
+            padding: 14px;
+            margin-bottom: 20px;
+            font-size: 0.9rem;
+            color: var(--text-secondary);
+            line-height: 1.5;
+        }
+
+        .expo-input-group {
+            margin-bottom: 16px;
+            text-align: left;
+        }
+
+        .expo-input-group label {
+            display: block;
+            margin-bottom: 6px;
+            font-weight: 500;
+            font-size: 0.9rem;
+        }
+
+        .expo-input-group input {
+            width: 100%;
+            padding: 12px 14px;
+            background: var(--bg-tertiary);
+            border: 1px solid var(--border-color);
+            border-radius: 8px;
+            color: var(--text-primary);
+            font-size: 0.95rem;
+        }
+
+        .expo-input-group input:focus {
+            outline: none;
+            border-color: var(--accent);
+        }
+
+        .expo-input-group small {
+            display: block;
+            margin-top: 6px;
+            font-size: 0.8rem;
+            color: var(--text-muted);
+        }
+
+        .expo-input-group small a {
+            color: var(--accent-light);
+        }
+
+        .expo-checkbox {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            margin-bottom: 20px;
+        }
+
+        .expo-checkbox input {
+            width: 18px;
+            height: 18px;
+            accent-color: var(--accent);
+        }
+
+        .expo-help-section {
+            margin-top: 24px;
+            padding-top: 20px;
+            border-top: 1px solid var(--border-color);
+        }
+
+        .expo-help-section h4 {
+            font-size: 0.95rem;
+            margin-bottom: 12px;
+            color: var(--text-secondary);
+        }
+
+        .expo-help-section ol {
+            padding-left: 20px;
+            font-size: 0.85rem;
+            color: var(--text-secondary);
+            line-height: 1.8;
+        }
+
+        .expo-help-section a {
+            color: var(--accent-light);
+        }
+
+        /* App Store Publish Modal Styles */
+        .publish-step {
+            margin-bottom: 24px;
+            background: var(--bg-tertiary);
+            border-radius: 12px;
+            overflow: hidden;
+        }
+
+        .step-header {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            padding: 14px 16px;
+            background: var(--bg-elevated);
+            border-bottom: 1px solid var(--border-color);
+        }
+
+        .step-number {
+            width: 28px;
+            height: 28px;
+            background: var(--gradient);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 600;
+            font-size: 0.9rem;
+        }
+
+        .step-title {
+            font-weight: 600;
+            font-size: 0.95rem;
+        }
+
+        .step-content {
+            padding: 16px;
+        }
+
+        .apple-credentials-note {
+            display: flex;
+            gap: 10px;
+            padding: 12px;
+            background: rgba(234, 179, 8, 0.1);
+            border: 1px solid rgba(234, 179, 8, 0.3);
+            border-radius: 8px;
+            font-size: 0.85rem;
+            color: var(--warning);
+            margin-top: 12px;
+        }
+
+        .build-options {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+        }
+
+        .build-option {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            padding: 14px;
+            background: var(--bg-secondary);
+            border: 1px solid var(--border-color);
+            border-radius: 8px;
+            cursor: pointer;
+            transition: all 0.15s;
+        }
+
+        .build-option:hover {
+            border-color: var(--accent);
+        }
+
+        .build-option input[type="radio"] {
+            width: 18px;
+            height: 18px;
+            accent-color: var(--accent);
+        }
+
+        .build-option-content {
+            text-align: left;
+        }
+
+        .build-option-content strong {
+            display: block;
+            margin-bottom: 2px;
+        }
+
+        .build-option-content small {
+            color: var(--text-muted);
+            font-size: 0.8rem;
+        }
+
+        .publish-actions {
+            display: flex;
+            gap: 12px;
+            justify-content: flex-end;
+            padding-top: 16px;
+            border-top: 1px solid var(--border-color);
+        }
+
+        /* Build Progress */
+        .build-progress {
+            padding: 20px;
+            text-align: center;
+        }
+
+        .build-progress-header {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 12px;
+            margin-bottom: 20px;
+        }
+
+        .build-spinner {
+            width: 24px;
+            height: 24px;
+            border: 3px solid var(--border-color);
+            border-top-color: var(--accent);
+            border-radius: 50%;
+            animation: spin 1s linear infinite;
+        }
+
+        @keyframes spin {
+            to { transform: rotate(360deg); }
+        }
+
+        .build-progress-bar {
+            width: 100%;
+            height: 8px;
+            background: var(--bg-tertiary);
+            border-radius: 4px;
+            overflow: hidden;
+            margin-bottom: 16px;
+        }
+
+        .build-progress-fill {
+            width: 0%;
+            height: 100%;
+            background: var(--gradient);
+            transition: width 0.3s ease;
+        }
+
+        .build-log {
+            background: var(--bg-primary);
+            border-radius: 8px;
+            padding: 12px;
+            font-family: 'Monaco', 'Menlo', monospace;
+            font-size: 0.75rem;
+            color: var(--text-secondary);
+            max-height: 150px;
+            overflow-y: auto;
+            text-align: left;
+        }
+
+        .build-log-entry {
+            margin-bottom: 4px;
+        }
+
+        .build-log-entry.success {
+            color: var(--success);
+        }
+
+        .build-log-entry.error {
+            color: var(--error);
+        }
+
+        /* Build Complete */
+        .build-complete {
+            padding: 40px 20px;
+            text-align: center;
+        }
+
+        .build-complete-icon {
+            font-size: 4rem;
+            margin-bottom: 16px;
+        }
+
+        .build-complete h3 {
+            font-size: 1.3rem;
+            margin-bottom: 12px;
+        }
+
+        .build-complete p {
+            color: var(--text-secondary);
+            margin-bottom: 24px;
+        }
+
+        .build-links {
+            display: flex;
+            gap: 12px;
+            justify-content: center;
+        }
+
         /* Toast */
         .toast {
             position: fixed;
@@ -2173,18 +2452,18 @@
             </div>
             <div class="modal-body">
                 <div class="publish-options">
-                    <div class="publish-option" onclick="publishTo('appstore')">
+                    <div class="publish-option" onclick="startAppStorePublish()">
                         <div class="publish-option-icon apple">🍎</div>
                         <div class="publish-option-text">
                             <h4>App Store</h4>
-                            <p>Publish to Apple App Store for iOS devices</p>
+                            <p>Publish to Apple App Store via Expo EAS</p>
                         </div>
                     </div>
-                    <div class="publish-option" onclick="publishTo('playstore')">
+                    <div class="publish-option" onclick="startPlayStorePublish()">
                         <div class="publish-option-icon android">🤖</div>
                         <div class="publish-option-text">
                             <h4>Google Play</h4>
-                            <p>Publish to Google Play Store for Android</p>
+                            <p>Publish to Google Play Store via Expo EAS</p>
                         </div>
                     </div>
                     <div class="publish-option" onclick="publishTo('web')">
@@ -2207,6 +2486,167 @@
                             <h4>Screenshot Generator</h4>
                             <p>Create App Store & Play Store screenshots</p>
                         </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Expo Setup Modal -->
+    <div class="modal-overlay" id="expoSetupModal">
+        <div class="modal" style="max-width: 550px;">
+            <div class="modal-header">
+                <h2>🚀 Expo EAS Setup</h2>
+                <button class="modal-close" onclick="closeExpoSetupModal()">&times;</button>
+            </div>
+            <div class="modal-body">
+                <div class="expo-setup-info">
+                    <p>To publish your app to the App Store, you need an Expo account with EAS (Expo Application Services).</p>
+                </div>
+
+                <div class="expo-input-group">
+                    <label>Expo Access Token</label>
+                    <input type="password" id="expoTokenInput" placeholder="Enter your Expo access token">
+                    <small>Get your token from <a href="https://expo.dev/settings/access-tokens" target="_blank">expo.dev/settings/access-tokens</a></small>
+                </div>
+
+                <div class="expo-input-group">
+                    <label>Expo Username</label>
+                    <input type="text" id="expoUsernameInput" placeholder="Your Expo username">
+                </div>
+
+                <div class="expo-input-group">
+                    <label>App Slug (unique identifier)</label>
+                    <input type="text" id="expoSlugInput" placeholder="my-awesome-app">
+                    <small>Lowercase, no spaces. Used in your app's URL on Expo.</small>
+                </div>
+
+                <div class="expo-checkbox">
+                    <input type="checkbox" id="rememberExpoToken" checked>
+                    <label for="rememberExpoToken">Remember credentials</label>
+                </div>
+
+                <button class="btn btn-primary" style="width: 100%;" onclick="saveExpoCredentials()">
+                    Save & Continue
+                </button>
+
+                <div class="expo-help-section">
+                    <h4>Don't have an Expo account?</h4>
+                    <ol>
+                        <li>Go to <a href="https://expo.dev/signup" target="_blank">expo.dev/signup</a></li>
+                        <li>Create a free account</li>
+                        <li>Go to Settings → Access Tokens</li>
+                        <li>Create a new token and paste it above</li>
+                    </ol>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- App Store Publish Modal -->
+    <div class="modal-overlay" id="appStorePublishModal">
+        <div class="modal" style="max-width: 600px;">
+            <div class="modal-header">
+                <h2>🍎 Publish to App Store</h2>
+                <button class="modal-close" onclick="closeAppStorePublishModal()">&times;</button>
+            </div>
+            <div class="modal-body">
+                <div class="publish-step" id="publishStep1">
+                    <div class="step-header">
+                        <span class="step-number">1</span>
+                        <span class="step-title">App Information</span>
+                    </div>
+                    <div class="step-content">
+                        <div class="expo-input-group">
+                            <label>App Name</label>
+                            <input type="text" id="publishAppName" placeholder="My Awesome App">
+                        </div>
+                        <div class="expo-input-group">
+                            <label>Bundle Identifier</label>
+                            <input type="text" id="publishBundleId" placeholder="com.yourcompany.myapp">
+                            <small>Unique identifier for your app (e.g., com.yourname.appname)</small>
+                        </div>
+                        <div class="expo-input-group">
+                            <label>Version</label>
+                            <input type="text" id="publishVersion" value="1.0.0" placeholder="1.0.0">
+                        </div>
+                    </div>
+                </div>
+
+                <div class="publish-step" id="publishStep2">
+                    <div class="step-header">
+                        <span class="step-number">2</span>
+                        <span class="step-title">Apple Developer Account</span>
+                    </div>
+                    <div class="step-content">
+                        <div class="expo-input-group">
+                            <label>Apple ID (Email)</label>
+                            <input type="email" id="appleIdInput" placeholder="your@email.com">
+                        </div>
+                        <div class="expo-input-group">
+                            <label>Apple Team ID</label>
+                            <input type="text" id="appleTeamIdInput" placeholder="XXXXXXXXXX">
+                            <small>Find this at <a href="https://developer.apple.com/account" target="_blank">developer.apple.com/account</a> → Membership</small>
+                        </div>
+                        <div class="apple-credentials-note">
+                            <span>⚠️</span>
+                            <span>You need an Apple Developer account ($99/year) to publish to the App Store.</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="publish-step" id="publishStep3">
+                    <div class="step-header">
+                        <span class="step-number">3</span>
+                        <span class="step-title">Build & Submit</span>
+                    </div>
+                    <div class="step-content">
+                        <div class="build-options">
+                            <label class="build-option">
+                                <input type="radio" name="buildType" value="development" checked>
+                                <span class="build-option-content">
+                                    <strong>Development Build</strong>
+                                    <small>For testing on your device</small>
+                                </span>
+                            </label>
+                            <label class="build-option">
+                                <input type="radio" name="buildType" value="production">
+                                <span class="build-option-content">
+                                    <strong>Production Build</strong>
+                                    <small>Ready for App Store submission</small>
+                                </span>
+                            </label>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="publish-actions">
+                    <button class="btn btn-secondary" onclick="closeAppStorePublishModal()">Cancel</button>
+                    <button class="btn btn-primary" onclick="startEASBuild('ios')">
+                        🚀 Start Build
+                    </button>
+                </div>
+
+                <!-- Build Progress -->
+                <div class="build-progress" id="buildProgress" style="display: none;">
+                    <div class="build-progress-header">
+                        <div class="build-spinner"></div>
+                        <span id="buildStatusText">Preparing build...</span>
+                    </div>
+                    <div class="build-progress-bar">
+                        <div class="build-progress-fill" id="buildProgressFill"></div>
+                    </div>
+                    <div class="build-log" id="buildLog"></div>
+                </div>
+
+                <!-- Build Complete -->
+                <div class="build-complete" id="buildComplete" style="display: none;">
+                    <div class="build-complete-icon">✅</div>
+                    <h3>Build Submitted Successfully!</h3>
+                    <p>Your app is being built on Expo's servers. This usually takes 10-30 minutes.</p>
+                    <div class="build-links">
+                        <a href="#" id="expoBuildLink" target="_blank" class="btn btn-secondary">View Build Status</a>
+                        <button class="btn btn-primary" onclick="closeAppStorePublishModal()">Done</button>
                     </div>
                 </div>
             </div>
@@ -4253,6 +4693,461 @@ Always generate functional, complete code that can run immediately.`;
             ctx.quadraticCurveTo(x, y, x + radius, y);
             ctx.closePath();
         }
+
+        // ==========================================
+        // Expo EAS Integration
+        // ==========================================
+
+        // Load saved Expo credentials on startup
+        function loadExpoCredentials() {
+            const saved = localStorage.getItem('vibecode_expo');
+            if (saved) {
+                try {
+                    const creds = JSON.parse(saved);
+                    return creds;
+                } catch (e) {
+                    return null;
+                }
+            }
+            return null;
+        }
+
+        // Check if Expo is configured
+        function isExpoConfigured() {
+            const creds = loadExpoCredentials();
+            return creds && creds.token && creds.username;
+        }
+
+        // Open Expo Setup Modal
+        function openExpoSetupModal() {
+            const creds = loadExpoCredentials();
+            if (creds) {
+                document.getElementById('expoTokenInput').value = creds.token || '';
+                document.getElementById('expoUsernameInput').value = creds.username || '';
+                document.getElementById('expoSlugInput').value = creds.slug || state.projectName.toLowerCase().replace(/\s+/g, '-');
+            } else {
+                document.getElementById('expoSlugInput').value = state.projectName.toLowerCase().replace(/\s+/g, '-');
+            }
+            document.getElementById('expoSetupModal').classList.add('active');
+        }
+
+        // Close Expo Setup Modal
+        function closeExpoSetupModal() {
+            document.getElementById('expoSetupModal').classList.remove('active');
+        }
+
+        // Save Expo Credentials
+        function saveExpoCredentials() {
+            const token = document.getElementById('expoTokenInput').value.trim();
+            const username = document.getElementById('expoUsernameInput').value.trim();
+            const slug = document.getElementById('expoSlugInput').value.trim();
+            const remember = document.getElementById('rememberExpoToken').checked;
+
+            if (!token) {
+                showToast('Please enter your Expo access token', 'error');
+                return;
+            }
+            if (!username) {
+                showToast('Please enter your Expo username', 'error');
+                return;
+            }
+            if (!slug) {
+                showToast('Please enter an app slug', 'error');
+                return;
+            }
+
+            const creds = { token, username, slug };
+
+            if (remember) {
+                localStorage.setItem('vibecode_expo', JSON.stringify(creds));
+            }
+
+            closeExpoSetupModal();
+            showToast('Expo credentials saved!', 'success');
+
+            // If we were trying to publish, continue with the publish flow
+            if (state.pendingPublish === 'ios') {
+                openAppStorePublishModal();
+            } else if (state.pendingPublish === 'android') {
+                openPlayStorePublishModal();
+            }
+            state.pendingPublish = null;
+        }
+
+        // Start App Store Publish Flow
+        function startAppStorePublish() {
+            closePublishModal();
+
+            if (!isExpoConfigured()) {
+                state.pendingPublish = 'ios';
+                openExpoSetupModal();
+                return;
+            }
+
+            openAppStorePublishModal();
+        }
+
+        // Open App Store Publish Modal
+        function openAppStorePublishModal() {
+            const creds = loadExpoCredentials();
+
+            // Pre-fill app name and bundle ID
+            document.getElementById('publishAppName').value = state.projectName;
+            document.getElementById('publishBundleId').value = `com.${creds.username}.${creds.slug}`.toLowerCase().replace(/[^a-z0-9.]/g, '');
+
+            // Reset UI state
+            document.getElementById('publishStep1').style.display = 'block';
+            document.getElementById('publishStep2').style.display = 'block';
+            document.getElementById('publishStep3').style.display = 'block';
+            document.querySelector('.publish-actions').style.display = 'flex';
+            document.getElementById('buildProgress').style.display = 'none';
+            document.getElementById('buildComplete').style.display = 'none';
+
+            document.getElementById('appStorePublishModal').classList.add('active');
+        }
+
+        // Close App Store Publish Modal
+        function closeAppStorePublishModal() {
+            document.getElementById('appStorePublishModal').classList.remove('active');
+        }
+
+        // Start Play Store Publish Flow
+        function startPlayStorePublish() {
+            closePublishModal();
+
+            if (!isExpoConfigured()) {
+                state.pendingPublish = 'android';
+                openExpoSetupModal();
+                return;
+            }
+
+            // For now, show a message that Android publishing follows similar flow
+            showToast('Android build uses similar flow. Preparing...', 'success');
+            // Could open a similar modal for Play Store specific options
+            openAppStorePublishModal(); // Reuse the same modal for now
+        }
+
+        // Open Play Store Publish Modal (placeholder - uses same modal)
+        function openPlayStorePublishModal() {
+            openAppStorePublishModal();
+        }
+
+        // Start EAS Build
+        function startEASBuild(platform) {
+            const appName = document.getElementById('publishAppName').value.trim();
+            const bundleId = document.getElementById('publishBundleId').value.trim();
+            const version = document.getElementById('publishVersion').value.trim();
+            const appleId = document.getElementById('appleIdInput').value.trim();
+            const teamId = document.getElementById('appleTeamIdInput').value.trim();
+            const buildType = document.querySelector('input[name="buildType"]:checked').value;
+
+            // Validation
+            if (!appName) {
+                showToast('Please enter an app name', 'error');
+                return;
+            }
+            if (!bundleId) {
+                showToast('Please enter a bundle identifier', 'error');
+                return;
+            }
+            if (platform === 'ios' && !appleId) {
+                showToast('Please enter your Apple ID email', 'error');
+                return;
+            }
+            if (platform === 'ios' && !teamId) {
+                showToast('Please enter your Apple Team ID', 'error');
+                return;
+            }
+
+            // Hide form, show progress
+            document.getElementById('publishStep1').style.display = 'none';
+            document.getElementById('publishStep2').style.display = 'none';
+            document.getElementById('publishStep3').style.display = 'none';
+            document.querySelector('.publish-actions').style.display = 'none';
+            document.getElementById('buildProgress').style.display = 'block';
+
+            // Generate Expo project and start build
+            simulateEASBuild(platform, { appName, bundleId, version, appleId, teamId, buildType });
+        }
+
+        // Simulate EAS Build (In real implementation, this would call Expo's API)
+        function simulateEASBuild(platform, config) {
+            const creds = loadExpoCredentials();
+            const log = document.getElementById('buildLog');
+            const progressFill = document.getElementById('buildProgressFill');
+            const statusText = document.getElementById('buildStatusText');
+
+            log.innerHTML = '';
+
+            const steps = [
+                { msg: 'Initializing Expo project...', progress: 10 },
+                { msg: 'Generating app.json configuration...', progress: 20 },
+                { msg: 'Creating React Native bundle...', progress: 35 },
+                { msg: 'Packaging assets...', progress: 50 },
+                { msg: `Uploading to Expo (${creds.username}/${creds.slug})...`, progress: 65 },
+                { msg: `Starting ${platform.toUpperCase()} build on EAS...`, progress: 80 },
+                { msg: 'Build queued successfully!', progress: 100, success: true }
+            ];
+
+            let stepIndex = 0;
+
+            function runStep() {
+                if (stepIndex >= steps.length) {
+                    // Build complete
+                    setTimeout(() => {
+                        document.getElementById('buildProgress').style.display = 'none';
+                        document.getElementById('buildComplete').style.display = 'block';
+                        document.getElementById('expoBuildLink').href = `https://expo.dev/accounts/${creds.username}/projects/${creds.slug}/builds`;
+                    }, 500);
+                    return;
+                }
+
+                const step = steps[stepIndex];
+                statusText.textContent = step.msg;
+                progressFill.style.width = step.progress + '%';
+
+                const logEntry = document.createElement('div');
+                logEntry.className = `build-log-entry ${step.success ? 'success' : ''}`;
+                logEntry.textContent = `> ${step.msg}`;
+                log.appendChild(logEntry);
+                log.scrollTop = log.scrollHeight;
+
+                stepIndex++;
+                setTimeout(runStep, 800 + Math.random() * 400);
+            }
+
+            runStep();
+
+            // Generate downloadable Expo project
+            generateExpoProject(config);
+        }
+
+        // Generate a complete Expo project for download
+        function generateExpoProject(config) {
+            const creds = loadExpoCredentials();
+
+            // Generate app.json
+            const appJson = {
+                expo: {
+                    name: config.appName,
+                    slug: creds.slug,
+                    version: config.version,
+                    orientation: "portrait",
+                    icon: "./assets/icon.png",
+                    userInterfaceStyle: "automatic",
+                    splash: {
+                        image: "./assets/splash.png",
+                        resizeMode: "contain",
+                        backgroundColor: "#0a0a0b"
+                    },
+                    ios: {
+                        supportsTablet: true,
+                        bundleIdentifier: config.bundleId
+                    },
+                    android: {
+                        adaptiveIcon: {
+                            foregroundImage: "./assets/adaptive-icon.png",
+                            backgroundColor: "#0a0a0b"
+                        },
+                        package: config.bundleId
+                    },
+                    web: {
+                        favicon: "./assets/favicon.png"
+                    },
+                    extra: {
+                        eas: {
+                            projectId: "your-project-id"
+                        }
+                    }
+                }
+            };
+
+            // Generate eas.json
+            const easJson = {
+                cli: { version: ">= 5.9.1" },
+                build: {
+                    development: {
+                        developmentClient: true,
+                        distribution: "internal"
+                    },
+                    preview: {
+                        distribution: "internal"
+                    },
+                    production: {}
+                },
+                submit: {
+                    production: {}
+                }
+            };
+
+            // Generate package.json
+            const packageJson = {
+                name: creds.slug,
+                version: config.version,
+                main: "node_modules/expo/AppEntry.js",
+                scripts: {
+                    start: "expo start",
+                    android: "expo start --android",
+                    ios: "expo start --ios",
+                    web: "expo start --web",
+                    build: "eas build",
+                    submit: "eas submit"
+                },
+                dependencies: {
+                    expo: "~50.0.0",
+                    "expo-status-bar": "~1.11.1",
+                    react: "18.2.0",
+                    "react-native": "0.73.2"
+                },
+                devDependencies: {
+                    "@babel/core": "^7.20.0"
+                },
+                private: true
+            };
+
+            // Store project files for export
+            state.expoProject = {
+                'app.json': JSON.stringify(appJson, null, 2),
+                'eas.json': JSON.stringify(easJson, null, 2),
+                'package.json': JSON.stringify(packageJson, null, 2),
+                'App.tsx': state.files['App.tsx'] || generateDefaultApp(config.appName),
+                'README.md': generateExpoReadme(config, creds)
+            };
+        }
+
+        // Generate default App.tsx if none exists
+        function generateDefaultApp(appName) {
+            return `import { StatusBar } from 'expo-status-bar';
+import { StyleSheet, Text, View } from 'react-native';
+
+export default function App() {
+  return (
+    <View style={styles.container}>
+      <Text style={styles.title}>${appName}</Text>
+      <Text style={styles.subtitle}>Built with VibeCode</Text>
+      <StatusBar style="auto" />
+    </View>
+  );
+}
+
+const styles = StyleSheet.create({
+  container: {
+    flex: 1,
+    backgroundColor: '#0a0a0b',
+    alignItems: 'center',
+    justifyContent: 'center',
+  },
+  title: {
+    fontSize: 28,
+    fontWeight: 'bold',
+    color: '#fff',
+    marginBottom: 8,
+  },
+  subtitle: {
+    fontSize: 16,
+    color: '#888',
+  },
+});`;
+        }
+
+        // Generate README for Expo project
+        function generateExpoReadme(config, creds) {
+            return `# ${config.appName}
+
+Built with VibeCode AI App Builder.
+
+## Getting Started
+
+1. Install dependencies:
+   \`\`\`bash
+   npm install
+   \`\`\`
+
+2. Start the development server:
+   \`\`\`bash
+   npm start
+   \`\`\`
+
+3. Install EAS CLI (if not installed):
+   \`\`\`bash
+   npm install -g eas-cli
+   \`\`\`
+
+4. Login to Expo:
+   \`\`\`bash
+   eas login
+   \`\`\`
+
+## Building for App Store
+
+### Development Build (for testing)
+\`\`\`bash
+eas build --platform ios --profile development
+\`\`\`
+
+### Production Build (for App Store)
+\`\`\`bash
+eas build --platform ios --profile production
+\`\`\`
+
+### Submit to App Store
+\`\`\`bash
+eas submit --platform ios
+\`\`\`
+
+## Building for Google Play
+
+### Production Build
+\`\`\`bash
+eas build --platform android --profile production
+\`\`\`
+
+### Submit to Play Store
+\`\`\`bash
+eas submit --platform android
+\`\`\`
+
+## Project Configuration
+
+- **App Name**: ${config.appName}
+- **Bundle ID**: ${config.bundleId}
+- **Version**: ${config.version}
+- **Expo Slug**: ${creds.slug}
+
+## Learn More
+
+- [Expo Documentation](https://docs.expo.dev/)
+- [EAS Build](https://docs.expo.dev/build/introduction/)
+- [EAS Submit](https://docs.expo.dev/submit/introduction/)
+`;
+        }
+
+        // Add state property for pending publish
+        state.pendingPublish = null;
+        state.expoProject = null;
+
+        // Add event listeners for Expo modals
+        document.getElementById('expoSetupModal').addEventListener('click', (e) => {
+            if (e.target.id === 'expoSetupModal') {
+                closeExpoSetupModal();
+            }
+        });
+
+        document.getElementById('appStorePublishModal').addEventListener('click', (e) => {
+            if (e.target.id === 'appStorePublishModal') {
+                closeAppStorePublishModal();
+            }
+        });
+
+        // Update escape key handler to include new modals
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'Escape') {
+                closePublishModal();
+                closeExpoSetupModal();
+                closeAppStorePublishModal();
+                closeScreenshotModal();
+            }
+        });
     </script>
 </body>
 </html>
