@@ -855,6 +855,601 @@
             color: var(--text-muted);
         }
 
+        /* Interactive Preview Styles */
+        .preview-app {
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+            font-size: 0.75rem;
+        }
+
+        .preview-header-bar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 12px;
+            border-bottom: 1px solid var(--border-color);
+        }
+
+        .preview-title {
+            font-weight: 700;
+            font-size: 0.9rem;
+        }
+
+        .preview-badge {
+            background: var(--accent);
+            color: white;
+            padding: 2px 8px;
+            border-radius: 10px;
+            font-size: 0.7rem;
+            font-weight: 600;
+        }
+
+        .preview-input-row {
+            display: flex;
+            gap: 6px;
+            padding: 10px;
+        }
+
+        .preview-input {
+            flex: 1;
+            padding: 8px 10px;
+            background: var(--bg-secondary);
+            border: 1px solid var(--border-color);
+            border-radius: 8px;
+            color: var(--text-primary);
+            font-size: 0.75rem;
+            outline: none;
+        }
+
+        .preview-input:focus {
+            border-color: var(--accent);
+        }
+
+        .preview-add-btn {
+            width: 32px;
+            height: 32px;
+            background: var(--accent);
+            border: none;
+            border-radius: 8px;
+            color: white;
+            font-size: 1.1rem;
+            cursor: pointer;
+        }
+
+        .preview-tabs {
+            display: flex;
+            gap: 4px;
+            padding: 0 10px 10px;
+        }
+
+        .preview-tab {
+            flex: 1;
+            padding: 6px;
+            background: var(--bg-secondary);
+            border: 1px solid var(--border-color);
+            border-radius: 6px;
+            color: var(--text-secondary);
+            font-size: 0.65rem;
+            cursor: pointer;
+        }
+
+        .preview-tab.active {
+            background: var(--accent);
+            color: white;
+            border-color: var(--accent);
+        }
+
+        .preview-list {
+            flex: 1;
+            overflow-y: auto;
+            padding: 0 10px;
+        }
+
+        .preview-todo-item {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            padding: 10px;
+            background: var(--bg-secondary);
+            border-radius: 8px;
+            margin-bottom: 6px;
+        }
+
+        .preview-todo-item.completed .preview-todo-text {
+            text-decoration: line-through;
+            opacity: 0.5;
+        }
+
+        .preview-checkbox {
+            width: 20px;
+            height: 20px;
+            border: 2px solid var(--border-light);
+            border-radius: 50%;
+            background: transparent;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 0.6rem;
+            color: white;
+        }
+
+        .preview-checkbox.checked {
+            background: var(--success);
+            border-color: var(--success);
+        }
+
+        .preview-todo-text {
+            flex: 1;
+            font-size: 0.75rem;
+        }
+
+        .preview-priority {
+            font-size: 0.55rem;
+            padding: 2px 6px;
+            border-radius: 4px;
+            text-transform: uppercase;
+        }
+
+        .preview-priority.high { background: #ef444433; color: #ef4444; }
+        .preview-priority.medium { background: #eab30833; color: #eab308; }
+        .preview-priority.low { background: #22c55e33; color: #22c55e; }
+
+        .preview-delete-btn {
+            width: 20px;
+            height: 20px;
+            background: transparent;
+            border: none;
+            color: var(--text-muted);
+            cursor: pointer;
+            font-size: 1rem;
+        }
+
+        .preview-delete-btn:hover {
+            color: var(--error);
+        }
+
+        .preview-footer {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 10px;
+            border-top: 1px solid var(--border-color);
+            font-size: 0.65rem;
+            color: var(--text-muted);
+        }
+
+        .preview-link-btn {
+            background: none;
+            border: none;
+            color: var(--accent);
+            cursor: pointer;
+            font-size: 0.65rem;
+        }
+
+        .preview-primary-btn {
+            width: calc(100% - 20px);
+            margin: 10px;
+            padding: 10px;
+            background: var(--gradient);
+            border: none;
+            border-radius: 8px;
+            color: white;
+            font-weight: 600;
+            font-size: 0.75rem;
+            cursor: pointer;
+        }
+
+        .preview-stats-row {
+            display: flex;
+            gap: 8px;
+            padding: 10px;
+        }
+
+        .preview-stat-card {
+            flex: 1;
+            background: var(--bg-secondary);
+            border-radius: 8px;
+            padding: 10px;
+            text-align: center;
+        }
+
+        .preview-stat-value {
+            font-size: 1.2rem;
+            font-weight: 700;
+            color: var(--accent);
+        }
+
+        .preview-stat-label {
+            font-size: 0.6rem;
+            color: var(--text-muted);
+        }
+
+        .preview-section-title {
+            font-size: 0.7rem;
+            font-weight: 600;
+            padding: 10px 10px 6px;
+            color: var(--text-secondary);
+        }
+
+        .preview-workout-item, .preview-note-item, .preview-cart-item, .preview-event-item {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            padding: 10px;
+            background: var(--bg-secondary);
+            border-radius: 8px;
+            margin-bottom: 6px;
+            cursor: pointer;
+        }
+
+        .preview-workout-icon, .preview-event-time {
+            font-size: 1.2rem;
+        }
+
+        .preview-workout-info, .preview-event-info, .preview-cart-info {
+            flex: 1;
+        }
+
+        .preview-workout-name, .preview-note-title, .preview-cart-name, .preview-event-title {
+            font-weight: 600;
+            font-size: 0.75rem;
+        }
+
+        .preview-workout-meta, .preview-note-preview, .preview-cart-price, .preview-event-loc {
+            font-size: 0.65rem;
+            color: var(--text-muted);
+        }
+
+        .preview-icon-btn {
+            background: none;
+            border: none;
+            color: var(--text-muted);
+            cursor: pointer;
+            font-size: 1rem;
+        }
+
+        .preview-timer-section {
+            text-align: center;
+            padding: 20px;
+        }
+
+        .preview-timer {
+            font-size: 2rem;
+            font-weight: 700;
+            font-family: monospace;
+            color: var(--accent);
+        }
+
+        .preview-timer-controls {
+            display: flex;
+            gap: 10px;
+            justify-content: center;
+            margin-top: 10px;
+        }
+
+        .preview-timer-btn {
+            padding: 8px 16px;
+            background: var(--bg-secondary);
+            border: 1px solid var(--border-color);
+            border-radius: 6px;
+            color: var(--text-primary);
+            cursor: pointer;
+            font-size: 0.7rem;
+        }
+
+        .preview-search-bar {
+            padding: 10px;
+        }
+
+        .preview-note-date {
+            font-size: 0.6rem;
+            color: var(--text-muted);
+            margin-top: 4px;
+        }
+
+        .preview-product-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 8px;
+            padding: 10px;
+        }
+
+        .preview-product-card {
+            background: var(--bg-secondary);
+            border-radius: 8px;
+            padding: 10px;
+            text-align: center;
+            cursor: pointer;
+        }
+
+        .preview-product-img {
+            font-size: 1.5rem;
+            margin-bottom: 6px;
+        }
+
+        .preview-product-name {
+            font-size: 0.7rem;
+            font-weight: 600;
+            margin-bottom: 4px;
+        }
+
+        .preview-product-price {
+            font-size: 0.75rem;
+            color: var(--accent);
+            font-weight: 600;
+            margin-bottom: 6px;
+        }
+
+        .preview-small-btn {
+            padding: 4px 8px;
+            background: var(--accent);
+            border: none;
+            border-radius: 4px;
+            color: white;
+            font-size: 0.6rem;
+            cursor: pointer;
+        }
+
+        .preview-qty-controls {
+            display: flex;
+            align-items: center;
+            gap: 6px;
+        }
+
+        .preview-qty-controls button {
+            width: 22px;
+            height: 22px;
+            background: var(--bg-tertiary);
+            border: 1px solid var(--border-color);
+            border-radius: 4px;
+            color: var(--text-primary);
+            cursor: pointer;
+        }
+
+        .preview-total-bar {
+            display: flex;
+            justify-content: space-between;
+            padding: 10px;
+            font-weight: 600;
+        }
+
+        .preview-total-amount {
+            color: var(--accent);
+        }
+
+        .preview-cart-badge {
+            background: var(--error);
+            color: white;
+            padding: 2px 6px;
+            border-radius: 10px;
+            font-size: 0.65rem;
+        }
+
+        .preview-calendar-grid {
+            display: grid;
+            grid-template-columns: repeat(7, 1fr);
+            gap: 2px;
+            padding: 10px;
+        }
+
+        .preview-day-header {
+            text-align: center;
+            font-size: 0.6rem;
+            color: var(--text-muted);
+            padding: 4px;
+        }
+
+        .preview-day-cell {
+            text-align: center;
+            padding: 6px 4px;
+            font-size: 0.7rem;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+
+        .preview-day-cell:hover {
+            background: var(--bg-secondary);
+        }
+
+        .preview-day-cell.today {
+            background: var(--accent);
+            color: white;
+        }
+
+        .preview-day-cell.disabled {
+            color: var(--text-muted);
+            cursor: default;
+        }
+
+        .preview-month-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 10px;
+            font-weight: 600;
+            font-size: 0.8rem;
+        }
+
+        .preview-chat-messages {
+            flex: 1;
+            overflow-y: auto;
+            padding: 10px;
+        }
+
+        .preview-chat-bubble {
+            max-width: 75%;
+            padding: 8px 10px;
+            border-radius: 12px;
+            margin-bottom: 8px;
+        }
+
+        .preview-chat-bubble.sent {
+            background: var(--accent);
+            color: white;
+            margin-left: auto;
+            border-bottom-right-radius: 4px;
+        }
+
+        .preview-chat-bubble.received {
+            background: var(--bg-secondary);
+            border-bottom-left-radius: 4px;
+        }
+
+        .preview-chat-text {
+            font-size: 0.75rem;
+        }
+
+        .preview-chat-time {
+            font-size: 0.55rem;
+            opacity: 0.7;
+            margin-top: 4px;
+        }
+
+        .preview-chat-input-row {
+            display: flex;
+            gap: 6px;
+            padding: 10px;
+            border-top: 1px solid var(--border-color);
+        }
+
+        .preview-send-btn {
+            width: 32px;
+            height: 32px;
+            background: var(--accent);
+            border: none;
+            border-radius: 8px;
+            color: white;
+            cursor: pointer;
+        }
+
+        .preview-weather-main {
+            text-align: center;
+            padding: 20px 10px;
+        }
+
+        .preview-weather-icon {
+            font-size: 3rem;
+        }
+
+        .preview-weather-temp {
+            font-size: 2.5rem;
+            font-weight: 700;
+        }
+
+        .preview-weather-desc {
+            font-size: 0.9rem;
+            color: var(--text-secondary);
+        }
+
+        .preview-weather-loc {
+            font-size: 0.7rem;
+            color: var(--text-muted);
+            margin-top: 4px;
+        }
+
+        .preview-weather-details {
+            display: flex;
+            justify-content: space-around;
+            padding: 10px;
+            background: var(--bg-secondary);
+            border-radius: 10px;
+            margin: 0 10px;
+        }
+
+        .preview-weather-detail {
+            text-align: center;
+            font-size: 0.65rem;
+        }
+
+        .preview-weather-detail span:first-child {
+            display: block;
+            font-size: 1rem;
+            margin-bottom: 4px;
+        }
+
+        .preview-weather-detail span:last-child {
+            font-weight: 600;
+        }
+
+        .preview-forecast-row {
+            display: flex;
+            justify-content: space-between;
+            padding: 10px;
+        }
+
+        .preview-forecast-day {
+            text-align: center;
+            font-size: 0.65rem;
+        }
+
+        .preview-forecast-day span {
+            display: block;
+        }
+
+        .preview-forecast-day span:nth-child(2) {
+            font-size: 1rem;
+            margin: 4px 0;
+        }
+
+        .preview-welcome {
+            text-align: center;
+            padding: 30px 10px;
+        }
+
+        .preview-app-icon {
+            width: 50px;
+            height: 50px;
+            background: var(--gradient);
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5rem;
+            margin: 0 auto 10px;
+        }
+
+        .preview-app-name {
+            font-size: 1rem;
+            font-weight: 700;
+        }
+
+        .preview-app-desc {
+            font-size: 0.7rem;
+            color: var(--text-muted);
+        }
+
+        .preview-demo-section {
+            padding: 10px;
+        }
+
+        .preview-counter {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 16px;
+            margin-top: 16px;
+        }
+
+        .preview-counter button {
+            width: 36px;
+            height: 36px;
+            background: var(--bg-secondary);
+            border: 1px solid var(--border-color);
+            border-radius: 8px;
+            color: var(--text-primary);
+            font-size: 1.2rem;
+            cursor: pointer;
+        }
+
+        .preview-counter span {
+            font-size: 1.5rem;
+            font-weight: 700;
+            min-width: 40px;
+            text-align: center;
+        }
+
         /* Preview Actions */
         .preview-actions {
             padding: 16px;
@@ -2556,37 +3151,676 @@ Always generate functional, complete code that can run immediately.`;
                 emptyPreview.style.display = 'none';
                 generatedApp.classList.add('active');
 
-                // Generate preview HTML from App.tsx
+                // Generate interactive preview HTML from App.tsx
                 const appCode = state.files['App.tsx'] || '';
                 generatedApp.innerHTML = generatePreviewHTML(appCode);
+
+                // Initialize preview interactivity
+                initPreviewInteractivity();
             }
         }
 
+        // Preview app state (separate from main app state)
+        let previewState = {
+            todos: [],
+            notes: [],
+            cartItems: [],
+            workouts: [],
+            inputValues: {},
+            counters: {}
+        };
+
         function generatePreviewHTML(code) {
-            // Simple preview generation - extract title and create mock UI
-            const titleMatch = code.match(/title:\s*['"](.+?)['"]/i) ||
-                              code.match(/<Text[^>]*style={[^}]*title[^}]*}[^>]*>([^<]+)<\/Text>/i);
-            const title = titleMatch ? titleMatch[1] : state.projectName;
+            // Reset preview state for new app
+            previewState = {
+                todos: [
+                    { id: 1, text: 'Buy groceries', completed: false, priority: 'high' },
+                    { id: 2, text: 'Call mom', completed: true, priority: 'medium' },
+                    { id: 3, text: 'Finish project', completed: false, priority: 'high' }
+                ],
+                notes: [
+                    { id: 1, title: 'Meeting Notes', content: 'Discuss Q4 goals...', date: 'Today' },
+                    { id: 2, title: 'Ideas', content: 'New app features...', date: 'Yesterday' }
+                ],
+                cartItems: [
+                    { id: 1, name: 'Wireless Headphones', price: 79.99, qty: 1 },
+                    { id: 2, name: 'Phone Case', price: 19.99, qty: 2 }
+                ],
+                workouts: [
+                    { id: 1, name: 'Morning Run', duration: '30 min', calories: 300 },
+                    { id: 2, name: 'Weight Training', duration: '45 min', calories: 250 }
+                ],
+                inputValues: {},
+                counters: { items: 0 }
+            };
+
+            // Detect app type from code
+            const codeLower = code.toLowerCase();
+            let appType = 'generic';
+
+            if (codeLower.includes('todo') || codeLower.includes('task')) {
+                appType = 'todo';
+            } else if (codeLower.includes('fitness') || codeLower.includes('workout') || codeLower.includes('exercise')) {
+                appType = 'fitness';
+            } else if (codeLower.includes('note') || codeLower.includes('memo')) {
+                appType = 'notes';
+            } else if (codeLower.includes('shop') || codeLower.includes('cart') || codeLower.includes('product') || codeLower.includes('ecommerce') || codeLower.includes('e-commerce')) {
+                appType = 'ecommerce';
+            } else if (codeLower.includes('calendar') || codeLower.includes('event') || codeLower.includes('schedule')) {
+                appType = 'calendar';
+            } else if (codeLower.includes('chat') || codeLower.includes('message')) {
+                appType = 'chat';
+            } else if (codeLower.includes('weather')) {
+                appType = 'weather';
+            }
+
+            // Generate appropriate interactive UI
+            switch (appType) {
+                case 'todo':
+                    return generateTodoPreview();
+                case 'fitness':
+                    return generateFitnessPreview();
+                case 'notes':
+                    return generateNotesPreview();
+                case 'ecommerce':
+                    return generateEcommercePreview();
+                case 'calendar':
+                    return generateCalendarPreview();
+                case 'chat':
+                    return generateChatPreview();
+                case 'weather':
+                    return generateWeatherPreview();
+                default:
+                    return generateGenericPreview();
+            }
+        }
+
+        function generateTodoPreview() {
+            return `
+                <div class="preview-app todo-app">
+                    <div class="preview-header-bar">
+                        <span class="preview-title">My Tasks</span>
+                        <span class="preview-badge" id="todoCount">${previewState.todos.filter(t => !t.completed).length}</span>
+                    </div>
+
+                    <div class="preview-input-row">
+                        <input type="text" class="preview-input" id="newTodoInput" placeholder="Add a new task...">
+                        <button class="preview-add-btn" onclick="addPreviewTodo()">+</button>
+                    </div>
+
+                    <div class="preview-tabs">
+                        <button class="preview-tab active" onclick="filterTodos('all', this)">All</button>
+                        <button class="preview-tab" onclick="filterTodos('active', this)">Active</button>
+                        <button class="preview-tab" onclick="filterTodos('completed', this)">Done</button>
+                    </div>
+
+                    <div class="preview-list" id="todoList">
+                        ${renderTodoItems()}
+                    </div>
+
+                    <div class="preview-footer">
+                        <span id="todoStats">${previewState.todos.filter(t => !t.completed).length} tasks remaining</span>
+                        <button class="preview-link-btn" onclick="clearCompletedTodos()">Clear completed</button>
+                    </div>
+                </div>
+            `;
+        }
+
+        function renderTodoItems(filter = 'all') {
+            let todos = previewState.todos;
+            if (filter === 'active') todos = todos.filter(t => !t.completed);
+            if (filter === 'completed') todos = todos.filter(t => t.completed);
+
+            return todos.map(todo => `
+                <div class="preview-todo-item ${todo.completed ? 'completed' : ''}" data-id="${todo.id}">
+                    <button class="preview-checkbox ${todo.completed ? 'checked' : ''}" onclick="toggleTodo(${todo.id})">
+                        ${todo.completed ? '✓' : ''}
+                    </button>
+                    <span class="preview-todo-text">${todo.text}</span>
+                    <span class="preview-priority ${todo.priority}">${todo.priority}</span>
+                    <button class="preview-delete-btn" onclick="deleteTodo(${todo.id})">×</button>
+                </div>
+            `).join('');
+        }
+
+        function generateFitnessPreview() {
+            return `
+                <div class="preview-app fitness-app">
+                    <div class="preview-header-bar">
+                        <span class="preview-title">💪 Fitness Tracker</span>
+                    </div>
+
+                    <div class="preview-stats-row">
+                        <div class="preview-stat-card">
+                            <div class="preview-stat-value" id="calorieCount">550</div>
+                            <div class="preview-stat-label">Calories</div>
+                        </div>
+                        <div class="preview-stat-card">
+                            <div class="preview-stat-value" id="workoutCount">2</div>
+                            <div class="preview-stat-label">Workouts</div>
+                        </div>
+                        <div class="preview-stat-card">
+                            <div class="preview-stat-value">75</div>
+                            <div class="preview-stat-label">Minutes</div>
+                        </div>
+                    </div>
+
+                    <div class="preview-section-title">Today's Workouts</div>
+                    <div class="preview-list" id="workoutList">
+                        ${previewState.workouts.map(w => `
+                            <div class="preview-workout-item">
+                                <div class="preview-workout-icon">🏃</div>
+                                <div class="preview-workout-info">
+                                    <div class="preview-workout-name">${w.name}</div>
+                                    <div class="preview-workout-meta">${w.duration} • ${w.calories} cal</div>
+                                </div>
+                                <button class="preview-icon-btn" onclick="deleteWorkout(${w.id})">×</button>
+                            </div>
+                        `).join('')}
+                    </div>
+
+                    <button class="preview-primary-btn" onclick="showAddWorkout()">+ Log Workout</button>
+
+                    <div class="preview-timer-section" id="timerSection" style="display:none;">
+                        <div class="preview-timer" id="timerDisplay">00:00</div>
+                        <div class="preview-timer-controls">
+                            <button class="preview-timer-btn" onclick="startTimer()">▶ Start</button>
+                            <button class="preview-timer-btn" onclick="resetTimer()">↺ Reset</button>
+                        </div>
+                    </div>
+                </div>
+            `;
+        }
+
+        function generateNotesPreview() {
+            return `
+                <div class="preview-app notes-app">
+                    <div class="preview-header-bar">
+                        <span class="preview-title">📝 Notes</span>
+                        <button class="preview-icon-btn" onclick="addNewNote()">+</button>
+                    </div>
+
+                    <div class="preview-search-bar">
+                        <input type="text" class="preview-input" placeholder="Search notes..." oninput="searchNotes(this.value)">
+                    </div>
+
+                    <div class="preview-list" id="notesList">
+                        ${previewState.notes.map(note => `
+                            <div class="preview-note-item" onclick="openNote(${note.id})">
+                                <div class="preview-note-title">${note.title}</div>
+                                <div class="preview-note-preview">${note.content}</div>
+                                <div class="preview-note-date">${note.date}</div>
+                            </div>
+                        `).join('')}
+                    </div>
+                </div>
+            `;
+        }
+
+        function generateEcommercePreview() {
+            const total = previewState.cartItems.reduce((sum, item) => sum + (item.price * item.qty), 0);
+            return `
+                <div class="preview-app ecommerce-app">
+                    <div class="preview-header-bar">
+                        <span class="preview-title">🛒 Shop</span>
+                        <span class="preview-cart-badge" id="cartBadge">${previewState.cartItems.length}</span>
+                    </div>
+
+                    <div class="preview-search-bar">
+                        <input type="text" class="preview-input" placeholder="Search products...">
+                    </div>
+
+                    <div class="preview-product-grid">
+                        <div class="preview-product-card" onclick="addToCart('Headphones', 79.99)">
+                            <div class="preview-product-img">🎧</div>
+                            <div class="preview-product-name">Wireless Headphones</div>
+                            <div class="preview-product-price">$79.99</div>
+                            <button class="preview-small-btn">Add to Cart</button>
+                        </div>
+                        <div class="preview-product-card" onclick="addToCart('Watch', 199.99)">
+                            <div class="preview-product-img">⌚</div>
+                            <div class="preview-product-name">Smart Watch</div>
+                            <div class="preview-product-price">$199.99</div>
+                            <button class="preview-small-btn">Add to Cart</button>
+                        </div>
+                    </div>
+
+                    <div class="preview-section-title">Cart (${previewState.cartItems.length})</div>
+                    <div class="preview-list" id="cartList">
+                        ${previewState.cartItems.map(item => `
+                            <div class="preview-cart-item">
+                                <div class="preview-cart-info">
+                                    <div class="preview-cart-name">${item.name}</div>
+                                    <div class="preview-cart-price">$${item.price.toFixed(2)} × ${item.qty}</div>
+                                </div>
+                                <div class="preview-qty-controls">
+                                    <button onclick="updateCartQty(${item.id}, -1)">-</button>
+                                    <span>${item.qty}</span>
+                                    <button onclick="updateCartQty(${item.id}, 1)">+</button>
+                                </div>
+                            </div>
+                        `).join('')}
+                    </div>
+
+                    <div class="preview-total-bar">
+                        <span>Total:</span>
+                        <span class="preview-total-amount" id="cartTotal">$${total.toFixed(2)}</span>
+                    </div>
+                    <button class="preview-primary-btn" onclick="checkout()">Checkout</button>
+                </div>
+            `;
+        }
+
+        function generateCalendarPreview() {
+            const today = new Date();
+            const days = ['Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat'];
+            const currentDay = today.getDate();
 
             return `
-                <div class="app-header">
-                    <div class="app-icon">⚡</div>
-                    <div class="app-title">${title}</div>
-                    <div class="app-subtitle">Built with VibeCode</div>
-                </div>
-                <div class="app-section">
-                    <div class="app-section-title">Features</div>
-                    <div class="app-card">
-                        <div class="app-card-title">AI-Powered</div>
-                        <div class="app-card-desc">Generated with Claude</div>
+                <div class="preview-app calendar-app">
+                    <div class="preview-header-bar">
+                        <span class="preview-title">📅 Calendar</span>
                     </div>
-                    <div class="app-card">
-                        <div class="app-card-title">React Native</div>
-                        <div class="app-card-desc">Cross-platform ready</div>
+
+                    <div class="preview-month-header">
+                        <button class="preview-icon-btn" onclick="prevMonth()">‹</button>
+                        <span>${today.toLocaleString('default', { month: 'long' })} ${today.getFullYear()}</span>
+                        <button class="preview-icon-btn" onclick="nextMonth()">›</button>
                     </div>
+
+                    <div class="preview-calendar-grid">
+                        ${days.map(d => `<div class="preview-day-header">${d}</div>`).join('')}
+                        ${Array.from({length: 35}, (_, i) => {
+                            const day = i - today.getDay() + 1;
+                            const isToday = day === currentDay;
+                            const isValid = day > 0 && day <= 31;
+                            return `<div class="preview-day-cell ${isToday ? 'today' : ''} ${!isValid ? 'disabled' : ''}"
+                                        onclick="${isValid ? `selectDate(${day})` : ''}">${isValid ? day : ''}</div>`;
+                        }).join('')}
+                    </div>
+
+                    <div class="preview-section-title">Upcoming Events</div>
+                    <div class="preview-list">
+                        <div class="preview-event-item">
+                            <div class="preview-event-time">9:00 AM</div>
+                            <div class="preview-event-info">
+                                <div class="preview-event-title">Team Meeting</div>
+                                <div class="preview-event-loc">Conference Room A</div>
+                            </div>
+                        </div>
+                        <div class="preview-event-item">
+                            <div class="preview-event-time">2:00 PM</div>
+                            <div class="preview-event-info">
+                                <div class="preview-event-title">Doctor Appointment</div>
+                                <div class="preview-event-loc">Medical Center</div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <button class="preview-primary-btn" onclick="addEvent()">+ Add Event</button>
                 </div>
-                <button class="app-button">Get Started</button>
             `;
+        }
+
+        function generateChatPreview() {
+            return `
+                <div class="preview-app chat-app">
+                    <div class="preview-header-bar">
+                        <span class="preview-title">💬 Messages</span>
+                    </div>
+
+                    <div class="preview-chat-messages" id="chatMessages">
+                        <div class="preview-chat-bubble received">
+                            <div class="preview-chat-text">Hey! How are you?</div>
+                            <div class="preview-chat-time">10:30 AM</div>
+                        </div>
+                        <div class="preview-chat-bubble sent">
+                            <div class="preview-chat-text">I'm good! Working on a new app 😊</div>
+                            <div class="preview-chat-time">10:32 AM</div>
+                        </div>
+                        <div class="preview-chat-bubble received">
+                            <div class="preview-chat-text">That's awesome! Can't wait to see it!</div>
+                            <div class="preview-chat-time">10:33 AM</div>
+                        </div>
+                    </div>
+
+                    <div class="preview-chat-input-row">
+                        <input type="text" class="preview-input" id="chatMsgInput" placeholder="Type a message...">
+                        <button class="preview-send-btn" onclick="sendChatMessage()">➤</button>
+                    </div>
+                </div>
+            `;
+        }
+
+        function generateWeatherPreview() {
+            return `
+                <div class="preview-app weather-app">
+                    <div class="preview-weather-main">
+                        <div class="preview-weather-icon">☀️</div>
+                        <div class="preview-weather-temp">72°</div>
+                        <div class="preview-weather-desc">Sunny</div>
+                        <div class="preview-weather-loc">San Francisco, CA</div>
+                    </div>
+
+                    <div class="preview-weather-details">
+                        <div class="preview-weather-detail">
+                            <span>💧</span>
+                            <span>Humidity</span>
+                            <span>45%</span>
+                        </div>
+                        <div class="preview-weather-detail">
+                            <span>💨</span>
+                            <span>Wind</span>
+                            <span>12 mph</span>
+                        </div>
+                        <div class="preview-weather-detail">
+                            <span>🌡</span>
+                            <span>Feels like</span>
+                            <span>70°</span>
+                        </div>
+                    </div>
+
+                    <div class="preview-section-title">5-Day Forecast</div>
+                    <div class="preview-forecast-row">
+                        <div class="preview-forecast-day"><span>Mon</span><span>☀️</span><span>75°</span></div>
+                        <div class="preview-forecast-day"><span>Tue</span><span>⛅</span><span>70°</span></div>
+                        <div class="preview-forecast-day"><span>Wed</span><span>🌧</span><span>65°</span></div>
+                        <div class="preview-forecast-day"><span>Thu</span><span>☀️</span><span>72°</span></div>
+                        <div class="preview-forecast-day"><span>Fri</span><span>☀️</span><span>78°</span></div>
+                    </div>
+                </div>
+            `;
+        }
+
+        function generateGenericPreview() {
+            return `
+                <div class="preview-app generic-app">
+                    <div class="preview-header-bar">
+                        <span class="preview-title">${state.projectName}</span>
+                    </div>
+
+                    <div class="preview-welcome">
+                        <div class="preview-app-icon">⚡</div>
+                        <div class="preview-app-name">${state.projectName}</div>
+                        <div class="preview-app-desc">Built with VibeCode</div>
+                    </div>
+
+                    <div class="preview-demo-section">
+                        <input type="text" class="preview-input" placeholder="Try typing here...">
+                        <button class="preview-primary-btn" onclick="showToast('Button clicked!', 'success')">Interactive Button</button>
+
+                        <div class="preview-counter">
+                            <button onclick="updateCounter(-1)">-</button>
+                            <span id="counterValue">0</span>
+                            <button onclick="updateCounter(1)">+</button>
+                        </div>
+                    </div>
+                </div>
+            `;
+        }
+
+        // Preview interaction functions
+        function initPreviewInteractivity() {
+            // Add enter key listener for todo input
+            const todoInput = document.getElementById('newTodoInput');
+            if (todoInput) {
+                todoInput.addEventListener('keypress', (e) => {
+                    if (e.key === 'Enter') addPreviewTodo();
+                });
+            }
+
+            // Add enter key listener for chat input
+            const chatInput = document.getElementById('chatMsgInput');
+            if (chatInput) {
+                chatInput.addEventListener('keypress', (e) => {
+                    if (e.key === 'Enter') sendChatMessage();
+                });
+            }
+        }
+
+        function addPreviewTodo() {
+            const input = document.getElementById('newTodoInput');
+            const text = input.value.trim();
+            if (!text) return;
+
+            const newTodo = {
+                id: Date.now(),
+                text: text,
+                completed: false,
+                priority: 'medium'
+            };
+            previewState.todos.unshift(newTodo);
+            input.value = '';
+
+            document.getElementById('todoList').innerHTML = renderTodoItems();
+            updateTodoStats();
+            showToast('Task added!', 'success');
+        }
+
+        function toggleTodo(id) {
+            const todo = previewState.todos.find(t => t.id === id);
+            if (todo) {
+                todo.completed = !todo.completed;
+                document.getElementById('todoList').innerHTML = renderTodoItems();
+                updateTodoStats();
+            }
+        }
+
+        function deleteTodo(id) {
+            previewState.todos = previewState.todos.filter(t => t.id !== id);
+            document.getElementById('todoList').innerHTML = renderTodoItems();
+            updateTodoStats();
+            showToast('Task deleted', 'success');
+        }
+
+        function clearCompletedTodos() {
+            previewState.todos = previewState.todos.filter(t => !t.completed);
+            document.getElementById('todoList').innerHTML = renderTodoItems();
+            updateTodoStats();
+            showToast('Completed tasks cleared', 'success');
+        }
+
+        function filterTodos(filter, btn) {
+            document.querySelectorAll('.preview-tab').forEach(t => t.classList.remove('active'));
+            btn.classList.add('active');
+            document.getElementById('todoList').innerHTML = renderTodoItems(filter);
+        }
+
+        function updateTodoStats() {
+            const remaining = previewState.todos.filter(t => !t.completed).length;
+            const countEl = document.getElementById('todoCount');
+            const statsEl = document.getElementById('todoStats');
+            if (countEl) countEl.textContent = remaining;
+            if (statsEl) statsEl.textContent = `${remaining} task${remaining !== 1 ? 's' : ''} remaining`;
+        }
+
+        function addToCart(name, price) {
+            const existing = previewState.cartItems.find(i => i.name === name);
+            if (existing) {
+                existing.qty++;
+            } else {
+                previewState.cartItems.push({ id: Date.now(), name, price, qty: 1 });
+            }
+            updateCartUI();
+            showToast(`${name} added to cart!`, 'success');
+        }
+
+        function updateCartQty(id, delta) {
+            const item = previewState.cartItems.find(i => i.id === id);
+            if (item) {
+                item.qty += delta;
+                if (item.qty <= 0) {
+                    previewState.cartItems = previewState.cartItems.filter(i => i.id !== id);
+                }
+            }
+            updateCartUI();
+        }
+
+        function updateCartUI() {
+            const total = previewState.cartItems.reduce((sum, item) => sum + (item.price * item.qty), 0);
+            const badge = document.getElementById('cartBadge');
+            const totalEl = document.getElementById('cartTotal');
+            const listEl = document.getElementById('cartList');
+
+            if (badge) badge.textContent = previewState.cartItems.length;
+            if (totalEl) totalEl.textContent = `$${total.toFixed(2)}`;
+            if (listEl) {
+                listEl.innerHTML = previewState.cartItems.map(item => `
+                    <div class="preview-cart-item">
+                        <div class="preview-cart-info">
+                            <div class="preview-cart-name">${item.name}</div>
+                            <div class="preview-cart-price">$${item.price.toFixed(2)} × ${item.qty}</div>
+                        </div>
+                        <div class="preview-qty-controls">
+                            <button onclick="updateCartQty(${item.id}, -1)">-</button>
+                            <span>${item.qty}</span>
+                            <button onclick="updateCartQty(${item.id}, 1)">+</button>
+                        </div>
+                    </div>
+                `).join('');
+            }
+        }
+
+        function checkout() {
+            if (previewState.cartItems.length === 0) {
+                showToast('Cart is empty!', 'error');
+                return;
+            }
+            const total = previewState.cartItems.reduce((sum, item) => sum + (item.price * item.qty), 0);
+            showToast(`Order placed! Total: $${total.toFixed(2)}`, 'success');
+            previewState.cartItems = [];
+            updateCartUI();
+        }
+
+        function sendChatMessage() {
+            const input = document.getElementById('chatMsgInput');
+            const text = input.value.trim();
+            if (!text) return;
+
+            const messagesEl = document.getElementById('chatMessages');
+            const time = new Date().toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' });
+
+            messagesEl.innerHTML += `
+                <div class="preview-chat-bubble sent">
+                    <div class="preview-chat-text">${text}</div>
+                    <div class="preview-chat-time">${time}</div>
+                </div>
+            `;
+
+            input.value = '';
+            messagesEl.scrollTop = messagesEl.scrollHeight;
+
+            // Simulate reply
+            setTimeout(() => {
+                const replies = ['That sounds great!', 'Interesting! Tell me more.', '👍', 'Cool!', 'Nice work!'];
+                const reply = replies[Math.floor(Math.random() * replies.length)];
+                messagesEl.innerHTML += `
+                    <div class="preview-chat-bubble received">
+                        <div class="preview-chat-text">${reply}</div>
+                        <div class="preview-chat-time">${new Date().toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' })}</div>
+                    </div>
+                `;
+                messagesEl.scrollTop = messagesEl.scrollHeight;
+            }, 1000);
+        }
+
+        function updateCounter(delta) {
+            const el = document.getElementById('counterValue');
+            if (el) {
+                let val = parseInt(el.textContent) + delta;
+                el.textContent = val;
+            }
+        }
+
+        function selectDate(day) {
+            showToast(`Selected: ${new Date().toLocaleString('default', { month: 'long' })} ${day}`, 'success');
+        }
+
+        function addEvent() {
+            showToast('Add event dialog would open here', 'success');
+        }
+
+        function addNewNote() {
+            showToast('New note created!', 'success');
+        }
+
+        function openNote(id) {
+            const note = previewState.notes.find(n => n.id === id);
+            if (note) {
+                showToast(`Opening: ${note.title}`, 'success');
+            }
+        }
+
+        function searchNotes(query) {
+            // Filter notes in real-time
+            const listEl = document.getElementById('notesList');
+            const filtered = previewState.notes.filter(n =>
+                n.title.toLowerCase().includes(query.toLowerCase()) ||
+                n.content.toLowerCase().includes(query.toLowerCase())
+            );
+            if (listEl) {
+                listEl.innerHTML = filtered.map(note => `
+                    <div class="preview-note-item" onclick="openNote(${note.id})">
+                        <div class="preview-note-title">${note.title}</div>
+                        <div class="preview-note-preview">${note.content}</div>
+                        <div class="preview-note-date">${note.date}</div>
+                    </div>
+                `).join('');
+            }
+        }
+
+        function showAddWorkout() {
+            const section = document.getElementById('timerSection');
+            if (section) {
+                section.style.display = section.style.display === 'none' ? 'block' : 'none';
+            }
+        }
+
+        let timerInterval = null;
+        let timerSeconds = 0;
+
+        function startTimer() {
+            if (timerInterval) {
+                clearInterval(timerInterval);
+                timerInterval = null;
+                return;
+            }
+            timerInterval = setInterval(() => {
+                timerSeconds++;
+                const mins = Math.floor(timerSeconds / 60).toString().padStart(2, '0');
+                const secs = (timerSeconds % 60).toString().padStart(2, '0');
+                document.getElementById('timerDisplay').textContent = `${mins}:${secs}`;
+            }, 1000);
+        }
+
+        function resetTimer() {
+            clearInterval(timerInterval);
+            timerInterval = null;
+            timerSeconds = 0;
+            document.getElementById('timerDisplay').textContent = '00:00';
+        }
+
+        function deleteWorkout(id) {
+            previewState.workouts = previewState.workouts.filter(w => w.id !== id);
+            const listEl = document.getElementById('workoutList');
+            const countEl = document.getElementById('workoutCount');
+            const calorieEl = document.getElementById('calorieCount');
+
+            if (listEl) {
+                listEl.innerHTML = previewState.workouts.map(w => `
+                    <div class="preview-workout-item">
+                        <div class="preview-workout-icon">🏃</div>
+                        <div class="preview-workout-info">
+                            <div class="preview-workout-name">${w.name}</div>
+                            <div class="preview-workout-meta">${w.duration} • ${w.calories} cal</div>
+                        </div>
+                        <button class="preview-icon-btn" onclick="deleteWorkout(${w.id})">×</button>
+                    </div>
+                `).join('');
+            }
+            if (countEl) countEl.textContent = previewState.workouts.length;
+            if (calorieEl) calorieEl.textContent = previewState.workouts.reduce((sum, w) => sum + w.calories, 0);
+            showToast('Workout deleted', 'success');
         }
 
         function runPreview() {
