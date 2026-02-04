@@ -1608,7 +1608,9 @@
             border-radius: 16px;
             width: 90%;
             max-width: 500px;
-            max-height: 80vh;
+            max-height: 90vh;
+            display: flex;
+            flex-direction: column;
             overflow: hidden;
         }
 
@@ -1618,6 +1620,7 @@
             display: flex;
             justify-content: space-between;
             align-items: center;
+            flex-shrink: 0;
         }
 
         .modal-header h2 {
@@ -1635,6 +1638,8 @@
         .modal-body {
             padding: 24px;
             overflow-y: auto;
+            flex: 1;
+            min-height: 0;
         }
 
         .publish-options {
@@ -1804,25 +1809,25 @@
         }
 
         .expo-input-group {
-            margin-bottom: 16px;
+            margin-bottom: 12px;
             text-align: left;
         }
 
         .expo-input-group label {
             display: block;
-            margin-bottom: 6px;
+            margin-bottom: 4px;
             font-weight: 500;
-            font-size: 0.9rem;
+            font-size: 0.85rem;
         }
 
         .expo-input-group input {
             width: 100%;
-            padding: 12px 14px;
+            padding: 10px 12px;
             background: var(--bg-tertiary);
             border: 1px solid var(--border-color);
             border-radius: 8px;
             color: var(--text-primary);
-            font-size: 0.95rem;
+            font-size: 0.9rem;
         }
 
         .expo-input-group input:focus {
@@ -1832,8 +1837,8 @@
 
         .expo-input-group small {
             display: block;
-            margin-top: 6px;
-            font-size: 0.8rem;
+            margin-top: 4px;
+            font-size: 0.75rem;
             color: var(--text-muted);
         }
 
@@ -1879,40 +1884,40 @@
 
         /* App Store Publish Modal Styles */
         .publish-step {
-            margin-bottom: 24px;
+            margin-bottom: 16px;
             background: var(--bg-tertiary);
-            border-radius: 12px;
+            border-radius: 10px;
             overflow: hidden;
         }
 
         .step-header {
             display: flex;
             align-items: center;
-            gap: 12px;
-            padding: 14px 16px;
+            gap: 10px;
+            padding: 10px 14px;
             background: var(--bg-elevated);
             border-bottom: 1px solid var(--border-color);
         }
 
         .step-number {
-            width: 28px;
-            height: 28px;
+            width: 24px;
+            height: 24px;
             background: var(--gradient);
             border-radius: 50%;
             display: flex;
             align-items: center;
             justify-content: center;
             font-weight: 600;
-            font-size: 0.9rem;
+            font-size: 0.8rem;
         }
 
         .step-title {
             font-weight: 600;
-            font-size: 0.95rem;
+            font-size: 0.9rem;
         }
 
         .step-content {
-            padding: 16px;
+            padding: 12px 14px;
         }
 
         .apple-credentials-note {
