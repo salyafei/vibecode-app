@@ -2455,9 +2455,25 @@ Always generate functional, complete code that can run immediately.`;
                 const role = msg.role === 'user' ? 'You' : 'VibeCode';
 
                 let content = msg.content;
-                // Render markdown
-                content = marked.parse(content);
-                content = DOMPurify.sanitize(content);
+                // Render markdown (with fallback if libraries aren't loaded)
+                try {
+                    if (typeof marked !== 'undefined' && marked.parse) {
+                        content = marked.parse(content);
+                    } else {
+                        // Simple fallback: convert code blocks and newlines
+                        content = content
+                            .replace(/```(\w*)\n([\s\S]*?)```/g, '<pre><code>$2</code></pre>')
+                            .replace(/`([^`]+)`/g, '<code>$1</code>')
+                            .replace(/\*\*([^*]+)\*\*/g, '<strong>$1</strong>')
+                            .replace(/\n/g, '<br>');
+                    }
+                    if (typeof DOMPurify !== 'undefined' && DOMPurify.sanitize) {
+                        content = DOMPurify.sanitize(content);
+                    }
+                } catch (e) {
+                    console.error('Error rendering markdown:', e);
+                    content = msg.content.replace(/</g, '&lt;').replace(/>/g, '&gt;').replace(/\n/g, '<br>');
+                }
 
                 div.innerHTML = `
                     <div class="message-header">
