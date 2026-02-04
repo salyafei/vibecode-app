@@ -3194,19 +3194,51 @@ export const spacing = {
         document.addEventListener('DOMContentLoaded', init);
 
         function init() {
-            // Load API key
-            const savedKey = localStorage.getItem('vibecode_api_key');
-            if (savedKey) {
-                state.apiKey = savedKey;
-                document.getElementById('apiSetup').classList.add('hidden');
+            // Load API key with error handling
+            try {
+                const savedKey = localStorage.getItem('vibecode_api_key');
+                if (savedKey) {
+                    state.apiKey = savedKey;
+                    document.getElementById('apiSetup').classList.add('hidden');
+                    // Pre-fill the input (masked) so user knows key is saved
+                    document.getElementById('apiKeyInput').value = savedKey;
+                    console.log('API key loaded from localStorage');
+                }
+            } catch (e) {
+                console.warn('Could not access localStorage for API key:', e);
+            }
+
+            // Load Expo credentials
+            try {
+                const savedExpo = localStorage.getItem('vibecode_expo');
+                if (savedExpo) {
+                    const expoCreds = JSON.parse(savedExpo);
+                    console.log('Expo credentials loaded from localStorage');
+                    // Pre-fill Expo inputs if modal elements exist
+                    if (document.getElementById('expoTokenInput')) {
+                        document.getElementById('expoTokenInput').value = expoCreds.token || '';
+                    }
+                    if (document.getElementById('expoUsernameInput')) {
+                        document.getElementById('expoUsernameInput').value = expoCreds.username || '';
+                    }
+                    if (document.getElementById('expoSlugInput')) {
+                        document.getElementById('expoSlugInput').value = expoCreds.slug || '';
+                    }
+                }
+            } catch (e) {
+                console.warn('Could not access localStorage for Expo credentials:', e);
             }
 
             // Load settings
-            const savedSettings = localStorage.getItem('vibecode_settings');
-            if (savedSettings) {
-                Object.assign(state.settings, JSON.parse(savedSettings));
-                document.getElementById('temperature').value = state.settings.temperature;
-                document.getElementById('tempValue').textContent = state.settings.temperature;
+            try {
+                const savedSettings = localStorage.getItem('vibecode_settings');
+                if (savedSettings) {
+                    Object.assign(state.settings, JSON.parse(savedSettings));
+                    document.getElementById('temperature').value = state.settings.temperature;
+                    document.getElementById('tempValue').textContent = state.settings.temperature;
+                }
+            } catch (e) {
+                console.warn('Could not access localStorage for settings:', e);
             }
 
             // Setup event listeners
@@ -3283,8 +3315,23 @@ export const spacing = {
             }
 
             state.apiKey = key;
+
+            // Always try to save to localStorage (with error handling)
             if (remember) {
-                localStorage.setItem('vibecode_api_key', key);
+                try {
+                    localStorage.setItem('vibecode_api_key', key);
+                    console.log('API key saved to localStorage');
+                } catch (e) {
+                    console.error('Failed to save API key to localStorage:', e);
+                    showToast('Warning: Could not save key permanently. Check browser settings.', 'error');
+                }
+            } else {
+                // If user unchecks remember, remove from storage
+                try {
+                    localStorage.removeItem('vibecode_api_key');
+                } catch (e) {
+                    console.warn('Could not remove API key from localStorage:', e);
+                }
             }
 
             document.getElementById('apiSetup').classList.add('hidden');
@@ -4700,14 +4747,15 @@ Always generate functional, complete code that can run immediately.`;
 
         // Load saved Expo credentials on startup
         function loadExpoCredentials() {
-            const saved = localStorage.getItem('vibecode_expo');
-            if (saved) {
-                try {
+            try {
+                const saved = localStorage.getItem('vibecode_expo');
+                if (saved) {
                     const creds = JSON.parse(saved);
+                    console.log('Expo credentials loaded');
                     return creds;
-                } catch (e) {
-                    return null;
                 }
+            } catch (e) {
+                console.warn('Could not load Expo credentials from localStorage:', e);
             }
             return null;
         }
@@ -4758,8 +4806,22 @@ Always generate functional, complete code that can run immediately.`;
 
             const creds = { token, username, slug };
 
+            // Always try to save to localStorage (with error handling)
             if (remember) {
-                localStorage.setItem('vibecode_expo', JSON.stringify(creds));
+                try {
+                    localStorage.setItem('vibecode_expo', JSON.stringify(creds));
+                    console.log('Expo credentials saved to localStorage');
+                } catch (e) {
+                    console.error('Failed to save Expo credentials to localStorage:', e);
+                    showToast('Warning: Could not save credentials permanently. Check browser settings.', 'error');
+                }
+            } else {
+                // If user unchecks remember, remove from storage
+                try {
+                    localStorage.removeItem('vibecode_expo');
+                } catch (e) {
+                    console.warn('Could not remove Expo credentials from localStorage:', e);
+                }
             }
 
             closeExpoSetupModal();
